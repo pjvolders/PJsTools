@@ -16,3 +16,8 @@ pjstheme = theme(
   panel.border = element_rect(colour='gray50', fill = NA), 
   strip.background = element_blank()
 )
+
+# read in bed files
+read.bed = function(file, quote = "\"", dec = ".") {
+  tmp = read.table(file)
+}
