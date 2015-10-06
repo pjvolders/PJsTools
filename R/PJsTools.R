@@ -18,6 +18,9 @@ pjstheme = theme(
 )
 
 # read in bed files
-read.bed = function(file, quote = "\"", dec = ".") {
-  tmp = read.table(file)
+read.bed = function(file, skip = 0) {
+  tmp = read.table(file, sep = "\t", skip = skip, stringsAsFactors = F)
+  bed_colnames=c('chr', 'start', 'end', 'id', 'bed_score', 'strand', 'thickstart', 'thickend', 'color', 'nrblocks', 'blockstarts', 'blocksizes')
+  colnames(tmp) = bed_colnames[1:dim(tmp)[2]]
+  return(tmp)
 }
