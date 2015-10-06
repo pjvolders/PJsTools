@@ -24,3 +24,6 @@ read.bed = function(file, skip = 0) {
   colnames(tmp) = bed_colnames[1:dim(tmp)[2]]
   return(tmp)
 }
+
+# calculate geometric mean
+geomean = function(x, na.rm = FALSE){exp(mean(log(x),na.rm=na.rm))}
