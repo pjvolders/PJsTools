@@ -27,3 +27,8 @@ read.bed = function(file, skip = 0) {
 
 # calculate geometric mean
 geomean = function(x, na.rm = FALSE){exp(mean(log(x),na.rm=na.rm))}
+
+# read data from clipboard
+read.clip = function(...){
+  read.delim(pipe("pbpaste"), ...)
+}
