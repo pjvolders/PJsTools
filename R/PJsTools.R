@@ -32,3 +32,33 @@ geomean = function(x, na.rm = FALSE){exp(mean(log(x),na.rm=na.rm))}
 read.clip = function(...){
   read.delim(pipe("pbpaste"), ...)
 }
+
+# apply with a fancy progress bar
+# based on: https://ryouready.wordpress.com/2010/01/11/progress-bars-in-r-part-ii-a-wrapper-for-apply-functions/
+# progress bar from https://rdrr.io/cran/dplyr/man/progress_estimated.html
+# STATUS: WORKING, but only tested once or twice,
+# tested with most ?apply examples
+# ISSUES/TODO: MARGIN argument cannot take a
+# vector like 1:2 that is more than one numeric
+apply_pb = function(X, MARGIN, FUN, ...)
+{
+  env = environment()
+  pb_Total = sum(dim(X)[MARGIN])
+  pb = dplyr::progress_estimated(pb_Total, min_time = 3)
+  
+  wrapper = function(...)
+  {
+    pb = get("pb", envir= env)
+    pb$tick()$print()
+    FUN(...)
+  }
+  res = apply(X, MARGIN, wrapper, ...)
+  res
+}
+
+## NOT RUN:
+# apply_pb(anscombe, 2, sd, na.rm=TRUE)
+
+## large dataset
+# df <- data.frame(rnorm(30000), rnorm(30000))
+# apply_pb(df, 1, sd)
