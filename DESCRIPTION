@@ -1,11 +1,11 @@
 Package: PJsTools
 Type: Package
-Title: What the package does (short line)
+Title: A bunch of functions that are helpfull for bioinformatics
 Version: 1.0
 Date: 2014-04-03
-Author: Who wrote it
-Maintainer: Who to complain to <yourfault@somewhere.net>
+Author: PJVolders
+Maintainer: Pieter-Jan Volders <pieterjan.volders@ugent.be>
 Description: More about what it does (maybe more than one line)
 License: What license is it under?
 Imports:
-    ggplot2
+    ggplot2, dplyr
