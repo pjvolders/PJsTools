@@ -1,1 +1,3 @@
+useDynLib(PJsTools)
 exportPattern("^[[:alpha:]]+")
+importFrom(Rcpp, evalCpp)

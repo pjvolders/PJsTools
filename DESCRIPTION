@@ -6,6 +6,7 @@ Date: 2014-04-03
 Author: PJVolders
 Maintainer: Pieter-Jan Volders <pieterjan.volders@ugent.be>
 Description: More about what it does (maybe more than one line)
-License: What license is it under?
+License: GPL (>= 2
 Imports:
-    ggplot2, dplyr
+    ggplot2, dplyr, Rcpp (>= 0.12.9)
+LinkingTo: Rcpp
