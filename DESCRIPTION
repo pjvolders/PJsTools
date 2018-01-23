@@ -5,8 +5,8 @@ Version: 1.0
 Date: 2014-04-03
 Author: PJVolders
 Maintainer: Pieter-Jan Volders <pieterjan.volders@ugent.be>
-Description: More about what it does (maybe more than one line)
-License: GPL (>= 2
+Description: A bunch of functions that are helpfull for bioinformatics. This is a test.
+License: GPL (>= 2)
 Imports:
     ggplot2, dplyr, Rcpp (>= 0.12.9)
 LinkingTo: Rcpp
