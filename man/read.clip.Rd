@@ -1,8 +1,7 @@
 \name{read.clip}
 \alias{read.clip}
-Read data from clipboard
 \title{
-Reads data in table format from clipboard and creates a data frame from it, with cases corresponding to lines and variables to fields in the data.
+Read data from clipboard
 }
 \description{
 Reads data in table format from clipboard and creates a data frame from it, with cases corresponding to lines and variables to fields in the data.
@@ -42,16 +41,12 @@ Further arguments to be passed to \code{read.delim}
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
+## Write some sample data to clipboard
+clip <- pipe("pbcopy", "w")                       
+write.table(cars, file=clip, sep = "\t")    
+close(clip)
 
-## The function is currently defined as
-function (x) 
-{
-  }
+## Read data from the clipboard
+my_cars = read.clip(sep = "\t")
+head(my_cars)
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
