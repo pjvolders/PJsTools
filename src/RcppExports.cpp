@@ -7,7 +7,7 @@ using namespace Rcpp;
 
 // cg_content
 Rcpp::DoubleVector cg_content(Rcpp::StringVector myvector);
-RcppExport SEXP PJsTools_cg_content(SEXP myvectorSEXP) {
+RcppExport SEXP _PJsTools_cg_content(SEXP myvectorSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -18,7 +18,7 @@ END_RCPP
 }
 // cpg_content
 Rcpp::DoubleVector cpg_content(Rcpp::StringVector myvector);
-RcppExport SEXP PJsTools_cpg_content(SEXP myvectorSEXP) {
+RcppExport SEXP _PJsTools_cpg_content(SEXP myvectorSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -26,4 +26,15 @@ BEGIN_RCPP
     rcpp_result_gen = Rcpp::wrap(cpg_content(myvector));
     return rcpp_result_gen;
 END_RCPP
+}
+
+static const R_CallMethodDef CallEntries[] = {
+    {"_PJsTools_cg_content", (DL_FUNC) &_PJsTools_cg_content, 1},
+    {"_PJsTools_cpg_content", (DL_FUNC) &_PJsTools_cpg_content, 1},
+    {NULL, NULL, 0}
+};
+
+RcppExport void R_init_PJsTools(DllInfo *dll) {
+    R_registerRoutines(dll, NULL, CallEntries, NULL, NULL);
+    R_useDynamicSymbols(dll, FALSE);
 }

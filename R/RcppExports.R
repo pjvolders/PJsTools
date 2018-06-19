@@ -2,10 +2,10 @@
 # Generator token: 10BE3573-1514-4C36-9D1C-5A225CD40393
 
 cg_content <- function(myvector) {
-    .Call('PJsTools_cg_content', PACKAGE = 'PJsTools', myvector)
+    .Call('_PJsTools_cg_content', PACKAGE = 'PJsTools', myvector)
 }
 
 cpg_content <- function(myvector) {
-    .Call('PJsTools_cpg_content', PACKAGE = 'PJsTools', myvector)
+    .Call('_PJsTools_cpg_content', PACKAGE = 'PJsTools', myvector)
 }
 

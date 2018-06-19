@@ -56,6 +56,19 @@ apply_pb = function(X, MARGIN, FUN, ...)
   res
 }
 
+fdr_cutoff = function(predictions, labels, fdr_cutoff=0.01) {
+  fdr_dat = data.frame(
+    cutoff = predictions[order(predictions, decreasing = T)],
+    fp = cumsum(!labels[order(predictions, decreasing = T)]),
+    p = cumsum(labels[order(predictions, decreasing = T)])
+  )
+  fdr_dat$fdr = fdr_dat$fp/fdr_dat$p
+  
+  fdr_cutoff_pos = max(which(fdr_dat$fdr<=fdr_cutoff))
+  return(fdr_dat[fdr_cutoff_pos,'cutoff'])
+}
+
+
 ## NOT RUN:
 # apply_pb(anscombe, 2, sd, na.rm=TRUE)
 
