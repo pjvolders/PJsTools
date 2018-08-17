@@ -5,18 +5,6 @@ rowmean = function(x, group, reorder = TRUE, na.rm = FALSE) {
   return(x.sum/x.n)
 }
 
-# custom ggplot2 theme
-library(ggplot2)
-pjstheme = theme(
-  axis.text.x = element_text(colour='gray50', angle = 90, hjust = 1, vjust = 0.5), 
-  axis.text.y = element_text(colour='gray50'), 
-  panel.background = element_blank(), 
-  panel.grid.minor = element_blank(), 
-  panel.grid.major = element_blank(), 
-  panel.border = element_rect(colour='gray50', fill = NA), 
-  strip.background = element_blank()
-)
-
 # read in bed files
 read.bed = function(file, skip = 0) {
   tmp = read.table(file, sep = "\t", skip = skip, stringsAsFactors = F)

@@ -13,8 +13,8 @@ Some of my favorite and custom functions
 \tabular{ll}{
 Package: \tab PJsTools\cr
 Type: \tab Package\cr
-Version: \tab 1.0\cr
-Date: \tab 2014-10-15\cr
+Version: \tab 1.1\cr
+Date: \tab 2018-08-17\cr
 License: \tab GPL\cr
 }
 TODO

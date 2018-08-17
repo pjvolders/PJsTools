@@ -1,8 +1,10 @@
 \name{pjstheme}
 \alias{pjstheme}
+\alias{theme_fancy_plot}
+\alias{theme_fancy_plot_discrete_x}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Custom ggplot2 theme
+Custom ggplot2 themes
 }
 \description{
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
