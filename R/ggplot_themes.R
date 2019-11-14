@@ -26,3 +26,9 @@ theme_fancy_plot = theme_bw(base_size = 6) +
 theme_fancy_plot_discrete_x = theme_fancy_plot + theme(
   axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1)
 )
+
+# A colorblind-friendly palette 
+colorblind.palette = c("#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
+colorblind.palette.grey = c("#999999", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
+
+# from http://www.cookbook-r.com/Graphs/Colors_(ggplot2)/#a-colorblind-friendly-palette
